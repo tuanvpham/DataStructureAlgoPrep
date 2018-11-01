@@ -10,11 +10,35 @@ class Employee:
 		self.email = first + '.' + last + '@company.com'
 
 	def fullname(self):
-		print('{} {}'.format(self.first, self.last))
+		return '{} {}'.format(self.first, self.last)
 
 	def apply_raise(self):
 		# access attributes of the class: self.raise_amount (from instance) or Employee.raise_amount (from class)
 		self.pay = int(self.pay * self.raise_amount)
+
+	# dunder (double underscore) or magic functions: don't need to invoke it directly. Invocation happens behind the scene
+	def __repr__(self):
+		return "Employee('{}', '{}', '{}')".format(self.first, self.last, self.pay)
+
+	def __str__(self):
+		return '{} - {}'.format(self.fullname, self.email)
+
+	# operator overriding add method: __add__ for +, __sub__ for -, etc...
+	def __add__(self, other):
+		return self.pay + other.pay
+
+	# Decorators: Getter, Setter
+	# declare like a method, but with property, we can treat it as attribute
+	
+	# Getter
+	@property
+	def nickname(self):
+		return 'nickname:{}'.format(self.first) 
+
+	# Setter
+	@nickname.setter
+	def nickname(self, name):
+		self.nickname = name
 
 
 class Developer(Employee):
@@ -65,4 +89,6 @@ print(emp_2.raise_amount)
 
 print(dev_1.email)
 
+print(emp_1 + emp_2)
 
+print(emp_1.nickname)
