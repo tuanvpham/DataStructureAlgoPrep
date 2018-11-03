@@ -13,7 +13,7 @@
 	- [start:] from start offset to the end
 	- [:end] from beginning to the end offset minus 1
 	- [start:end] from start offset to the end offset minus 1
-	- [start:end:step] from start offset to the end minus 1, skipping by step
+	- [start: end: step] from start offset to the end minus 1, skipping by step
 
 - Lists and Tuples
 	- elements can be of different types - any Python object
@@ -27,6 +27,8 @@
 			- by value: list.remove(value)
 		- get item and delete: pop(), pop(index)
 		- test for a value with in: 'test' in list
+    - Dictionary
+        - key: immutable
 
 - = versus copy()
 	- assign a list to more than one variable, changing in one place also changes it in others (sticky note)
