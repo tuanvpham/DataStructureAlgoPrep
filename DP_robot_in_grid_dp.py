@@ -34,7 +34,6 @@ Have a recursion:
 # Implement
 import time
 start_time = 0
-#  Recursion solution
 grid = [
     [0, 0, 0, 0],
     
