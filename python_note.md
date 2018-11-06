@@ -84,6 +84,35 @@
 - convert Unicode characters to binary data: encode
 - convert binary data to Unicode: decode
 
+### How to slice sequences
+- simplest uses: list, str, and bytes and any Python class has `__getitem__` and `__setitem__`
+- `somelist[start:end]`, start is inclusive and end is exclusive
+- slicing from the start: leave out zero index `a[:5]`
+- slicing to the end: `a[5:]`
+- negative numbers for doing offset relative to the end of list `a[-3:-1]`
+- sliced list won't affect original list
+- assignment:
+```
+    print('Before ', a)
+    a[2:7] = [99, 22, 14]
+    print('After ', a)
+    >>>
+    Before ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    After ['a', 'b', 99, 22, 14, 'h']
+```
+- assign a slice with no start or end indexes: replace its entire contents with a copy of what's referenced (instead of allocating a new list)
+- assigning to a list slice will replace that range in the original sequence with what's referenced even if their lenghts are different
+```
+    b = a
+    print('Before ', a)
+    a[:] = [101, 102, 103]
+    print('After ', b)
+    >>>
+    Before ['a', 'b', 99, 22, 14, 'h']
+    After [101, 102, 103]
+```
+
+
 ### Useful functions
 - dir(object): list of attributes of methods of any object
 - help(ClassName): list of all information about class (inheritance, attributes, methods)
