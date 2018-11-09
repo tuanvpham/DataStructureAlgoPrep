@@ -112,9 +112,19 @@
     After [101, 102, 103]
 ```
 
+### Shorthand for Swapping Two Variables
+- use tuples
+```
+    a = 7
+    b = 10
+    a, b =  b, a
+```
 
 ### Useful functions
 - dir(object): list of attributes of methods of any object
 - help(ClassName): list of all information about class (inheritance, attributes, methods)
 - isinstance(instance_name, ClassName): check if an instance is from a class
 - issubclass(SubclassName, ClassName): check if a class is subclass of another class
+- Dictionary:
+    - dict['key']: this returns an error if value cannot be found
+    - use dict.get(key, 'default'): returns 'default' if value cannot be found
