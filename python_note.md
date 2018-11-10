@@ -9,6 +9,7 @@
 - mutable object: an open box, but can't change its type
 - variables: names (a reference to a thing rather than the thing itself - sticky note)
 - assingment does not copy a value; it just attaches a name to the object that contains data
+- False: False (boolean), None (null), 0, 0.0, '', [], (), {}, set()
 
 ### Slice
 - [:] extracts entire sequence from start to end
@@ -55,17 +56,28 @@
     - union: `|` or `union()`
     - difference: `-` or `difference()`
 
+### List and Dict Comprehension
+- expression for item in iterable
+- expression for item in iterable if condition
+```python
+    number_list = [number for number in range(1,6)]
+    number_list_expression = [number-1 for number in range(1,6)]
+    a_list = [number for number in range(1,6) if number % 2 ==0]
+    rows = range(1,4)
+    cols = range(1,3)
+    cells = [(row, col) for row in rows for col in cols]
+```
 ---
 ## Effective Python
 
 ### Assignment = versus copy()
 - assign a list to more than one variable, changing in one place also changes it in others (sticky note)
-``` 
+```python
     a = [1,2,3]
     b = a
 ```
 - copy(), list(), slice: copy values of a list to an independent, fresh list
-``` 
+```python 
     b = a.copy()
     c = list(a)
     d = a[:]
@@ -92,7 +104,7 @@
 - negative numbers for doing offset relative to the end of list `a[-3:-1]`
 - sliced list won't affect original list
 - assignment:
-```
+```python
     print('Before ', a)
     a[2:7] = [99, 22, 14]
     print('After ', a)
@@ -102,7 +114,7 @@
 ```
 - assign a slice with no start or end indexes: replace its entire contents with a copy of what's referenced (instead of allocating a new list)
 - assigning to a list slice will replace that range in the original sequence with what's referenced even if their lenghts are different
-```
+```python
     b = a
     print('Before ', a)
     a[:] = [101, 102, 103]
@@ -114,13 +126,15 @@
 
 ### Shorthand for Swapping Two Variables
 - use tuples
-```
+```python
     a = 7
     b = 10
     a, b =  b, a
 ```
 
-### Useful functions
+
+
+### Useful Things
 - dir(object): list of attributes of methods of any object
 - help(ClassName): list of all information about class (inheritance, attributes, methods)
 - isinstance(instance_name, ClassName): check if an instance is from a class
@@ -128,3 +142,9 @@
 - Dictionary:
     - dict['key']: this returns an error if value cannot be found
     - use dict.get(key, 'default'): returns 'default' if value cannot be found
+- Continue lines with \
+- Ierating over multiple sequences in parallel: zip()
+```python
+    for day, fruit in zip(days, fruits):
+        print(day, fruit)
+```
