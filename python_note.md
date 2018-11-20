@@ -58,17 +58,35 @@ https://www.pythoncentral.io/category/python-tips-tricks-hacks-idioms/
     - union: `|` or `union()`
     - difference: `-` or `difference()`
 
-### List and Dict Comprehension
-- expression for item in iterable
-- expression for item in iterable if condition
+### Comprehension
+- List Comprehension
+    - [ expression for item in iterable ]
+    - [ expression for item in iterable if condition ]
+- Dict Comprehenstion
+    - { key_expression:value_expression for expression in iterable }
+- Set Comprehension
+    - { expression for expression in iterable }
 ```python
+    # List Comprehension
     number_list = [number for number in range(1,6)]
     number_list_expression = [number-1 for number in range(1,6)]
     a_list = [number for number in range(1,6) if number % 2 ==0]
     rows = range(1,4)
     cols = range(1,3)
     cells = [(row, col) for row in rows for col in cols]
+
+    # Dict Comprehention
+    word = 'letters'
+    letter_counts = { letter: word.count(letter) for letter in word}
+
+    # Set Comprehension
+    a_set = { number for number in range(1,6) if number % 3 == 1}
 ```
+
+### Function
+- postional arguments
+- keyword arguments
+
 ---
 ## Effective Python
 
