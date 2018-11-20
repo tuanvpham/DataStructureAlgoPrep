@@ -152,6 +152,12 @@ https://www.pythoncentral.io/category/python-tips-tricks-hacks-idioms/
     a, b =  b, a
 ```
 
+### Special Notes
+- Avoid using start, end, step in a single step
+    - if using stride, making it a positive value and omit start and end indexes
+    - consider do 2 assignments: one to slice, another to stride (make steps)
+- Use List Comprehenstions instead of map, filter, and lambda
+- List Comprehension with more than 2 expressions are difficult to read (should be avoided)
 
 
 ### Useful Things
