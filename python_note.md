@@ -1,5 +1,7 @@
 # Some notes for Python
 
+https://www.pythoncentral.io/category/python-tips-tricks-hacks-idioms/
+
 ## Data Structure
 
 ### Variables, Names, and Objects
