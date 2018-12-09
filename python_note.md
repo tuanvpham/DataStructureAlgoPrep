@@ -1,8 +1,32 @@
 # Some notes for Python
 
+## Useful Resources
 https://www.pythoncentral.io/category/python-tips-tricks-hacks-idioms/
 
 ## Data Structure
+### Stacks and Queues
+- Stack
+ - Last In First Out (LIFO)
+ - Use [] (List)
+ - Add item to the top (end) of the list: append(item)
+ - Pop out item at the end: pop()
+- Queue
+ - First In First Out (FIFO)
+ - Use *collections.deque*
+ - Add item at the top (end): append(item)
+ - Pop out item at the beginning: popleft()
+```python
+    stack = ['Tuan', 'Viet']
+    stack.append('Pham')
+    stack.pop()
+
+    from collections import deque
+    queue = deque(['Tuan', 'Viet'])
+    queue.append('Pham')
+    queue.popleft()
+ ```
+
+
 
 ### Variables, Names, and Objects
 - everything is booleans, integers, floats, strings
@@ -75,7 +99,7 @@ https://www.pythoncentral.io/category/python-tips-tricks-hacks-idioms/
     cols = range(1,3)
     cells = [(row, col) for row in rows for col in cols]
 
-    # Dict Comprehention
+    # Dict Comprehention: create a dict of frequences of each letter in a word
     word = 'letters'
     letter_counts = { letter: word.count(letter) for letter in word}
 
